@@ -1,5 +1,5 @@
-# killme
-kikjasdl;fhl;ashdfl
+# DSC80 Project 3 - 
+Brandon Dioneda, Samuel Zhang
 
 ## Introduction and Question Identification
 
