@@ -1,4 +1,4 @@
-# DSC80 Project 3 - 
+# DSC80 Project 3
 Brandon Dioneda, Samuel Zhang
 
 ## Introduction and Question Identification
