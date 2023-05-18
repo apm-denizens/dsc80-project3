@@ -88,8 +88,12 @@ HEAD OF CLEANED DF (5 rows x 97 columns):
 
 ## Univariate Analysis
 
+<iframe src="assets/champion_freq.html"></iframe>
+
 (1st graph)
 Bar graph keeps track of the total amount of times a champion is used. We ordered the bars from least frequent to most frequent. For the champion in question, we see that Talon is only used 50 times throughout the 2022 season.
+
+
 
 (2nd graph)
 A density histogram of the frequency of kills a champion has overall in the data set. We included an overlayed density histogram for Talon specifically. Through the whole season, Talon mostly gets only 2-3 kills in a given match, which isn't too surprising as Talon usually takes the Jungle position.
