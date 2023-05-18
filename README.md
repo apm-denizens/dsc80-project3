@@ -159,4 +159,7 @@ The missingness of the url value depends on whether there is a url for the match
 
 ## MCAR Analysis
 
+<iframe src="assets/ban2_by_missingness_of_ban1.html" width="100%" height="500px" frameBorder=0></iframe>
+
+<iframe src="assets/result_by_missingness_of_ban1.html" width="100%" height="500px" frameBorder=0></iframe>
 
