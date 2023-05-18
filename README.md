@@ -163,3 +163,7 @@ The missingness of the url value depends on whether there is a url for the match
 
 <iframe src="assets/result_by_missingness_of_ban1.html" width="100%" height="500px" frameBorder=0></iframe>
 
+
+## Hypothesis Test
+
+<iframe src="assets/talon_win_rate.html" width="100%" height="500px" frameBorder=0></iframe>
