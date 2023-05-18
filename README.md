@@ -94,14 +94,19 @@ HEAD OF CLEANED DF (5 rows x 97 columns):
 Bar graph keeps track of the total amount of times a champion is used. We ordered the bars from least frequent to most frequent. For the champion in question, we see that Talon is only used 50 times throughout the 2022 season.
 
 
+<iframe src="assets/kills_histogram.html" width="100%" height="500px" frameBorder=0></iframe>
 
 (2nd graph)
 A density histogram of the frequency of kills a champion has overall in the data set. We included an overlayed density histogram for Talon specifically. Through the whole season, Talon mostly gets only 2-3 kills in a given match, which isn't too surprising as Talon usually takes the Jungle position.
 
 ## Bivariate Analysis
 
+<iframe src="assets/wins_and_losses.html" width="100%" height="500px" frameBorder=0></iframe>
+
 (1st graph)
 Bar graph that keeps track of the wins and loses that each champion has, where blue depicts the wins and red the losses. Talon in particular has 28 wins and 22 losses.
+
+<iframe src="assets/kills_vs_deaths.html" width="100%" height="500px" frameBorder=0></iframe>
 
 (2nd graph)
 We wanted to explore the relationship between the number of kills and deaths in the data set. In the scatter plot above, we see that the more kills a player has, the less deaths they have, though this association is weak as the graph isn't quite linear.
