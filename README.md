@@ -88,7 +88,7 @@ HEAD OF CLEANED DF (5 rows x 97 columns):
 
 ## Univariate Analysis
 
-<iframe src="assets/champion_freq.html"></iframe>
+<iframe src="assets/champion_freq.html" width="100%" height="500px" frameBorder=0></iframe>
 
 (1st graph)
 Bar graph keeps track of the total amount of times a champion is used. We ordered the bars from least frequent to most frequent. For the champion in question, we see that Talon is only used 50 times throughout the 2022 season.
