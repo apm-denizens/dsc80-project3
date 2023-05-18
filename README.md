@@ -38,23 +38,36 @@ Describe, in detail, the data cleaning steps you took and how they affected your
 
 Steps Taken to Clean the Data
 
-- Removing Rows marked with data incompleteness:
+<!-- - Removing Rows marked with data incompleteness:
 
   - There are rows marked as complete, partial, or ignore. Competitive League matches that were left incomplete for whatever reason (abandoning, reset, etc.) are not going to accurately represent the performance of Talon.
-  - Over 10 rows related to Talon matches are removed through filtering out these columns. As a result, the number of talon rows that are left to perform our analysis on only number to 50.
+  - Over 10 rows related to Talon matches are removed through filtering out these columns. As a result, the number of talon rows that are left to perform our analysis on only number to 50. -->
 
 - Drop Team Related Columns
 
-  - There are both player and team statistic rows inside the dataset. Since we're only interested in the performance of a particular champion, it doesn't make sense to have rows that don't contain information about a champion selected.
-  - We could technically keep these rows without having any effect on our analysis (NaN values will be ignored). However, removing these rows keeps our dataframe more interpretable. (Won't confuse readers who aren't familiar with the structure of the dataset)
+  - There are both player and team statistic rows inside the dataset. Since we're only interested in the performance of a particular champion, it doesn't make sense to have rows that don't have any champion information.
+  - We could technically keep these rows without having any effect on our analysis (NaN values will be ignored). However, removing these rows keeps our dataframe more interpretable. (Won't confuse readers who may not be familiar with the structure of the dataset)
 
 - Drop Team Related Columns
 
   - Along with team-related rows, there are also team-related columns, where for all player-related rows the value for that column would be NaN.
+  - Since all the team-related rows have been dropped, these columns bring nothing of value to our analysis. They will only serve to visually clutter the dataframe.
 
-- Removing Team Statistic Related Rows
+- Replace "unknown player" with NaN in playername column
 
-HEAD OF CLEANED DF:
+  - Unknown players are currently denoted with the string "unknown player".
+  - Since the playername column is a string column, potential analyses can misinterpret "unknown player" as being an actual player.
+
+- Casting Columns to bool
+
+  - There are a lot of columns that are essentially True/False values. However, these values are denoted by 0 or 1. As a result, the datatype can be misinterpreted as an integer instead of a boolean value.
+  - Checking to see if columns are T/F
+    - Create a set of values within the column. If they're 0/1, then convert values in column to T/F
+
+- Convert Data Types
+  - Running the pandas convert_dtypes function on the dataset. Infers string, integer, and float types when appropiate.
+
+HEAD OF CLEANED DF (5 rows x 97 columns):
 
 <div markdown="1" style="
     display: block; 
@@ -75,10 +88,24 @@ HEAD OF CLEANED DF:
 
 ## Univariate Analysis
 
-Bar graph keeps track of the total amount of times a champion is used. We ordered the abrs from least used to most used. For the champion in question, we see that Talon is only used 50 times throughout the 2022 season.
+(1st graph)
+Bar graph keeps track of the total amount of times a champion is used. We ordered the bars from least frequent to most frequent. For the champion in question, we see that Talon is only used 50 times throughout the 2022 season.
+
+(2nd graph)
+A density histogram of the frequency of kills a champion has overall in the data set. We included an overlayed density histogram for Talon specifically. Through the whole season, Talon mostly gets only 2-3 kills in a given match, which isn't too surprising as Talon usually takes the Jungle position.
 
 ## Bivariate Analysis
 
+(1st graph)
 Bar graph that keeps track of the wins and loses that each champion has, where blue depicts the wins and red the losses. Talon in particular has 28 wins and 22 losses.
 
-##
+(2nd graph)
+We wanted to explore the relationship between the number of kills and deaths in the data set. In the scatter plot above, we see that the more kills a player has, the less deaths they have, though this association is weak as the graph isn't quite linear.
+
+## Interesting Aggregates
+
+(1st pivot)
+Pivot table that keeps track of the average earned gpm (gold per minute) each position has, depending on if they won a match or not. As expected, the highest avergage gpm is across all positions where a match was won. In relation to our question, Talon usually takes the Jungle position whose responsibility is gaining gold and experience for the team.
+
+(2nd pivot)
+Pivot table of average kills per position depending on if they are on the Blue or Red side of a match. Trend observed is that the Blue side gets higher kills on average across all positions.
