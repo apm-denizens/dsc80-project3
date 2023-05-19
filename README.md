@@ -26,9 +26,9 @@ Since there are 149400 rows total, that means there are 149400 / 12 = 12450 comp
 
 ** Names of the columns that are relevant to your question & descriptions of those relevant columns **
 
-(we're focusing on the player rows {not the team rows})
-champion - the name of the champion a character has selected
-result - whether that player has won the match
+(we're focusing on the player rows {not the team rows})  
+champion - the name of the champion a character has selected  
+result - whether that player has won the match  
 
 These two columns are needed to find matches related to Talon (champion) & whether Talon won or not (result).
 
@@ -43,7 +43,7 @@ Steps Taken to Clean the Data
   - There are rows marked as complete, partial, or ignore. Competitive League matches that were left incomplete for whatever reason (abandoning, resetting, etc.) are not going to accurately represent the performance of Talon.
   - Over 10 rows related to Talon matches are removed by filtering out these columns. As a result, the number of talon rows that are left to perform our analysis on only number to 50. -->
 
-- Drop Team Related Columns
+- Drop Team Related Rows
 
   - There are both player and team statistic rows inside the dataset. Since we're only interested in the performance of a particular champion, it doesn't make sense to have rows that don't have any champion information.
   - We could technically keep these rows without having any effect on our analysis (NaN values will be ignored). However, removing these rows keeps our dataframe more interpretable. (Won't confuse readers who may not be familiar with the structure of the dataset)
