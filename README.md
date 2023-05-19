@@ -153,37 +153,42 @@ If there is a column citing the domain name of the url, then the missingness of 
 
 ## Missingness Dependency
 
-<iframe src="assets/ban2_by_missingness_of_ban1.html" width="100%" height="500px" frameBorder=0></iframe>
+** First Missingness Dependency Check **  
+  
+Ban1 & Ban2 are both categorical variables that take on the value of the name of a champion to be banned from being picked in the match. As a result, to determine if the value of ban2 is related to the missingness of ban1, we need to have a test statistic that tells us how different the two categorical distributions are. The TVD is an appropriate choice to use here.
 
-Ban1 & Ban2 are both categorical variables that take on the value of the name of a champion. As a result, to determine if the value of ban2 is related to the missingness of ban1, we need to have a test statistic that tells us how different the two categorical distributions are. The TVD is an appropriate choice to use here.
-
-Our Hypotheses:
-Null hypothesis - The distributions of ban2 when ban1 is missing and ban2 when ban1 isn't missing are the same.
-Alternative hypothesis - The distributions of ban2 when ban1 is missing and ban2 when ban1 isn't missing are not the same.
+Our Hypotheses:  
+Null hypothesis - The distributions of ban2 when ban1 is missing and ban2 when ban1 isn't missing are the same.  
+Alternative hypothesis - The distributions of ban2 when ban1 is missing and ban2 when ban1 isn't missing are not the same.  
 
 The observed test statistic (TVD) that we calculate ends up being ~0.3599. To check to see how unusual this observed test stat is (assuming the null), we run a permutation test and simulate test statistics under the null hypothesis 100 times.
 
+<iframe src="assets/ban2_by_missingness_of_ban1.html" width="100%" height="500px" frameBorder=0></iframe>
+  
 In the end, our calculated p-value ends up being exactly 0. This means that none of our simulated test statistics were ever greater than or equal to our observed test statistic.
 
-We have sufficient evidence to reject the null hypothesis. This ultimately suggests that the categorical distribution of ban2 when ban1 is missing is different from the categorical distribution of ban2 when ban1 isn't missing.
+We have sufficient evidence to reject the null hypothesis. This ultimately strongly suggests that the categorical distribution of ban2 when ban1 is missing is different from the categorical distribution of ban2 when ban1 isn't missing.
 
-In other words, the missingness of ban1 is dependent on ban2. (MAR)
+In other words, the missingness of ban1 seems to be dependent on ban2. (MAR)
 
-<iframe src="assets/result_by_missingness_of_ban1.html" width="100%" height="500px" frameBorder=0></iframe>
 
+** Second Missingness Dependency Check **
+  
 This time we're checking to see if the distributions of the result column (Boolean True/False), are different depending on if ban1 is missing or not. In this case, result is also a categorical variable, so the TVD would remain an appropriate statistic in this case as well.
 
-Our Hypotheses:
-Null hypothesis - The distributions of result when ban1 is missing and result when ban1 isn't missing are the same.
-Alternative hypothesis - The distributions of result when ban1 is missing and result when ban1 isn't missing are not the same.
+Our Hypotheses:  
+Null hypothesis - The distributions of result when ban1 is missing and result when ban1 isn't missing are the same.  
+Alternative hypothesis - The distributions of result when ban1 is missing and result when ban1 isn't missing are not the same.  
 
 Our observed test statistic is ~0.00139. Once again, to figure out how unusual this test statistic is (assuming the null), we run a permutation test and simulate test statistics under the null hypothesis 100 times.
 
+<iframe src="assets/result_by_missingness_of_ban1.html" width="100%" height="500px" frameBorder=0></iframe>  
+  
 In the end, our calculated p-value is 0.9. This means that 90% of simulated test statistics ended up being greater than our observed test statistic. This means that our observed test statistic is not unusual under the null.
 
 With this in mind, we fail to reject the null hypothesis. While the result column could still be dependent on the missingness on ban1, we don't have enough evidence to think that could be the case.
 
-Subsequently, the missingness of ban1 does not depend on the result column.
+Subsequently, the missingness of ban1 does not seem to depend on the result column.
 
 ## Hypothesis Test
 
