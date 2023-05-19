@@ -180,7 +180,11 @@ Our Hypotheses:
 Null hypothesis - The distributions of result when ban1 is missing and result when ban1 isn't missing are the same.  
 Alternative hypothesis - The distributions of result when ban1 is missing and result when ban1 isn't missing are not the same.  
 
-Our observed test statistic is ~0.00139. Once again, to figure out how unusual this test statistic is (assuming the null), we run a permutation test and simulate test statistics under the null hypothesis 100 times.
+Our observed test statistic is ~0.00139.  
+ 
+<img src="assets/result_by_missingness_of_ban1.jpg" width="100%" height="500px"></img>
+  
+Once again, to figure out how unusual this test statistic is (assuming the null), we run a permutation test and simulate test statistics under the null hypothesis 100 times.
 
 <iframe src="assets/result_by_missingness_of_ban1.html" width="100%" height="500px" frameBorder=0></iframe>  
   
