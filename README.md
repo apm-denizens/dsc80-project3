@@ -90,24 +90,20 @@ HEAD OF CLEANED DF (5 rows x 97 columns):
 
 <iframe src="assets/champion_freq.html" width="100%" height="500px" frameBorder=0></iframe>
 
-(1st graph)
 The bar graph keeps track of the total amount of times a champion is used. We ordered the bars from least frequent to most frequent. For the champion in question, we see that Talon is only used 65 times throughout the 2022 season.
 
 <iframe src="assets/kills_histogram.html" width="100%" height="500px" frameBorder=0></iframe>
 
-(2nd graph)
 A density histogram of the frequency of kills a champion has overall in the data set. We included an overlaid density histogram for Talon specifically. Throughout the whole season, Talon mostly gets only 2-3 kills in a given match, which isn't too surprising as Talon usually takes the Jungle role (whose responsibility is gathering resources such as gold and experience for the team).
 
 ## Bivariate Analysis
 
 <iframe src="assets/wins_and_losses.html" width="100%" height="500px" frameBorder=0></iframe>
 
-(1st graph)
 The bar graph keeps track of the wins and losses that each champion has, where blue depicts the wins and red the losses. Talon in particular has 36 wins and 29 losses.
 
 <iframe src="assets/kills_vs_deaths.html" width="100%" height="500px" frameBorder=0></iframe>
 
-(2nd graph)
 We wanted to explore the relationship between the number of kills and deaths in the data set. In the scatter plot above, we see that the more kills a player has, the fewer deaths they have, though this association is weak as the graph isn't strongly linear.
 
 ## Interesting Aggregates
@@ -126,7 +122,6 @@ We wanted to explore the relationship between the number of kills and deaths in 
 
 </div>
 
-(1st pivot)
 Pivot table that keeps track of the average earned gpm (gold per minute) each position has, depending on if they won a match or not. As expected, the highest average gpm is across all positions where a match was won. In relation to our question, Talon usually takes the Jungle position whose responsibility is gaining gold and experience for the team.
 
 <div markdown="1" style="
@@ -143,7 +138,6 @@ Pivot table that keeps track of the average earned gpm (gold per minute) each po
 
 </div>
 
-(2nd pivot)
 Pivot table of average kills per position depending on if they are on the Blue or Red side of a match. The trend observed is that the Blue side gets higher kills on average across all positions.
 
 ## NMAR Analysis
