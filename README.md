@@ -148,6 +148,8 @@ State whether you believe there is a column in your dataset that is NMAR. Explai
 We believe the 'url' column may be NMAR. There are urls that exist for every competitive match, which will document match information. However, after checking the unique domain names in the url column, it would appear that the only 2 sites mentioned are: lpl.qq.com & matchhistory.na.leagueoflegends.com.
 
 The missingness of the url value depends on whether there is a url for the match that is documented on one of these two sites. In other words, the missingness of the url depends on part of the url itself, i.e. the value of the url.
+  
+If there is a column citing the domain name of the url, then the missingness of the url column would depend on that column, thereby making the url column MAR.
 
 ## Missingness Dependency
 
