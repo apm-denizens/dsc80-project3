@@ -26,7 +26,8 @@ Since there are 149400 rows total, that means there are 149400 / 12 = 12450 comp
 
 ** Names of the columns that are relevant to your question & descriptions of those relevant columns **
 
-(we're focusing on the player rows {not the team rows})  
+We're focusing on the player rows, not the team rows.  
+
 champion - the name of the champion a character has selected  
 result - whether that player has won the match  
 
@@ -62,7 +63,7 @@ Steps Taken to Clean the Data
 
   - There are a lot of columns that are essentially True/False values. However, these values are denoted by 0 or 1. As a result, the datatype can be misinterpreted as an integer instead of a boolean value.
   - Checking to see if columns are T/F
-    - Create a set of values within the column. If they're 0/1, then convert values in column to T/F
+    - Create a set of values within the column. If the set only has elements 0 and 1, then convert the values in the column to T/F
 
 - Convert Data Types
   - Running the pandas convert_dtypes function on the dataset. Infers string, integer, and float types when appropriate.
@@ -90,7 +91,7 @@ HEAD OF CLEANED DF (5 rows x 97 columns):
 
 <iframe src="assets/champion_freq.html" width="100%" height="500px" frameBorder=0></iframe>
 
-The bar graph keeps track of the total amount of times a champion is used. We ordered the bars from least frequent to most frequent. For the champion in question, we see that Talon is only used 65 times throughout the 2022 season.
+The bar graph keeps track of the total amount of times a champion is used. We ordered the bars from least frequent to most frequent. For the champion in question, we see that Talon is only used 65 times throughout the 2022 season. Comparing this to Nautilus, who was used 4427 times, we see that Talon is comparatively unpopular in the competitive scene.
 
 <iframe src="assets/kills_histogram.html" width="100%" height="500px" frameBorder=0></iframe>
 
