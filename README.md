@@ -207,6 +207,6 @@ Chosen Significance Level: 0.05. We’re willing to accept a 5% chance of making
 
 <iframe src="assets/talon_win_rate.html" width="100%" height="500px" frameBorder=0></iframe>
 
-P-Value: 0.2323 > 0.05
+P-Value: 0.2267 > 0.05
 
 We fail to reject the null hypothesis at the 0.05 significance level. It should be noted that Talon's true win rate could very well be greater than 50% (and that we are making a Type II error). However, we lack sufficient evidence to definitively support this claim. To increase our power to detect an effect, we can consider increasing our sample size by including matches from other years. However, it should be noted that Talon as a hero has likely been changed (buffs/nerfs) numerous times, so we should take interpretations about how good Talon currently is, with a grain of salt. 
