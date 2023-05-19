@@ -123,7 +123,7 @@ We wanted to explore the relationship between the number of kills and deaths in 
 
 </div>
 
-Pivot table that keeps track of the average earned gpm (gold per minute) each position has, depending on if they won a match or not. As expected, the highest average gpm is across all positions where a match was won. In relation to our question, Talon usually takes the Jungle position whose responsibility is gaining gold and experience for the team.
+Pivot table that keeps track of the average earned gpm (gold per minute) each position has, depending on if they won a match or not. As expected, the highest average gpm is across all positions where a match was won. In relation to our question, Talon usually takes the Jungle or Mid positions which, in context of gpm, means he ususally has the 4th or 2nd most resources in the team.
 
 <div markdown="1" style="
     display: block; 
@@ -139,7 +139,7 @@ Pivot table that keeps track of the average earned gpm (gold per minute) each po
 
 </div>
 
-Pivot table of average kills per position depending on if they are on the Blue or Red side of a match. The trend observed is that the Blue side gets higher kills on average across all positions.
+Pivot table of average kills per position depending on if they are on the Blue or Red side of a match. The trend observed is that the Blue side gets higher kills on average across all positions. Interesting to note that the game is biased towards one side of the map.
 
 ## NMAR Analysis
 
