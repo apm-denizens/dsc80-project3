@@ -198,10 +198,8 @@ Subsequently, the missingness of ban1 does not seem to depend on the result colu
 
 Going back to our question, about whether Talon is more likely to win or lose any given match. We would essentially like to know if Talon's win rate is more than 50%.
 
-Null Hypothesis: Talon's win rate is 50%
-Alternative Hypothesis: Talon's win rate is greater than 50%
-
-In this case, the test statistic
+Null Hypothesis: Talon's win rate is 50%  
+Alternative Hypothesis: Talon's win rate is greater than 50%  
 
 Test Statistic: Talon's proportion of matches won. This is an appropriate choice of the test statistic, as larger values point towards the alternative hypothesis, and smaller values point towards the null hypothesis.
 
@@ -211,4 +209,4 @@ Chosen Significance Level: 0.05. We’re willing to accept a 5% chance of making
 
 P-Value: 0.2323 > 0.05
 
-We fail to reject the null hypothesis at the 0.05 significance level. It should be noted that Talon's true win rate could very well be greater than 50% (and that we are making a Type II error). However, we lack sufficient evidence to definitively support this claim. To increase our power to detect an effect, we can consider increasing our sample size by including matches from other years. However, it should be noted that Talon as a hero has likely been changed (buffs/nerfs) numerous times, so we should take interpretations about how good Talon is currently, with a grain of salt. 
+We fail to reject the null hypothesis at the 0.05 significance level. It should be noted that Talon's true win rate could very well be greater than 50% (and that we are making a Type II error). However, we lack sufficient evidence to definitively support this claim. To increase our power to detect an effect, we can consider increasing our sample size by including matches from other years. However, it should be noted that Talon as a hero has likely been changed (buffs/nerfs) numerous times, so we should take interpretations about how good Talon currently is, with a grain of salt. 
