@@ -188,7 +188,7 @@ Once again, to figure out how unusual this test statistic is (assuming the null)
 
 <iframe src="assets/result_by_missingness_of_ban1.html" width="100%" height="500px" frameBorder=0></iframe>  
   
-In the end, our calculated p-value is 0.9. This means that 90% of simulated test statistics ended up being greater than our observed test statistic. This means that our observed test statistic is not unusual under the null.
+In the end, our calculated p-value is 0.92. This means that 92% of simulated test statistics ended up being greater than our observed test statistic. This means that our observed test statistic is not unusual under the null.
 
 With this in mind, we fail to reject the null hypothesis. While the result column could still be dependent on the missingness on ban1, we don't have enough evidence to think that could be the case.
 
