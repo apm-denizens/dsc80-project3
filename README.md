@@ -1,4 +1,4 @@
-# DSC80 Project 3
+# Talon Wins in League of Legends
 
 Brandon Dioneda, Samuel Zhang
 
@@ -20,9 +20,9 @@ While Talon here is a very specific example, in general, understanding the relev
 
 ** Report the number of rows in the dataset **
 
-Matches are represented by 12 rows. 10 rows are for each of the players (5 from each team), and 2 rows are for team wide statistics.
+Matches are represented by 12 rows. 10 rows are for each of the players (5 from each team), and 2 rows are for team-wide statistics.
 Since there are 149400 rows total, that means there are 149400 / 12 = 12450 competitive matches contained within this dataset.
-12450 _ 2 = 24900 rows are team related rows and 12450 _ 10 = 124500 rows are related to individual players.
+12450 * 2 = 24900 rows are team related rows and 12450 * 10 = 124500 rows are related to individual players.
 
 ** Names of the columns that are relevant to your question & descriptions of those relevant columns **
 
@@ -30,18 +30,18 @@ Since there are 149400 rows total, that means there are 149400 / 12 = 12450 comp
 champion - the name of the champion a character has selected
 result - whether that player has won the match
 
-These two columns are needed to find matches related to Talon (champion) & wether Talon won or not (result).
+These two columns are needed to find matches related to Talon (champion) & whether Talon won or not (result).
 
 ## Data Cleaning
 
-Describe, in detail, the data cleaning steps you took and how they affected your analyses. The steps should be explained in reference to the data generating process. Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
+Describe, in detail, the data cleaning steps you took and how they affected your analyses. The steps should be explained in reference to the data-generating process. Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 
 Steps Taken to Clean the Data
 
 <!-- - Removing Rows marked with data incompleteness:
 
-  - There are rows marked as complete, partial, or ignore. Competitive League matches that were left incomplete for whatever reason (abandoning, reset, etc.) are not going to accurately represent the performance of Talon.
-  - Over 10 rows related to Talon matches are removed through filtering out these columns. As a result, the number of talon rows that are left to perform our analysis on only number to 50. -->
+  - There are rows marked as complete, partial, or ignore. Competitive League matches that were left incomplete for whatever reason (abandoning, resetting, etc.) are not going to accurately represent the performance of Talon.
+  - Over 10 rows related to Talon matches are removed by filtering out these columns. As a result, the number of talon rows that are left to perform our analysis on only number to 50. -->
 
 - Drop Team Related Columns
 
@@ -65,7 +65,7 @@ Steps Taken to Clean the Data
     - Create a set of values within the column. If they're 0/1, then convert values in column to T/F
 
 - Convert Data Types
-  - Running the pandas convert_dtypes function on the dataset. Infers string, integer, and float types when appropiate.
+  - Running the pandas convert_dtypes function on the dataset. Infers string, integer, and float types when appropriate.
 
 HEAD OF CLEANED DF (5 rows x 97 columns):
 
@@ -91,24 +91,24 @@ HEAD OF CLEANED DF (5 rows x 97 columns):
 <iframe src="assets/champion_freq.html" width="100%" height="500px" frameBorder=0></iframe>
 
 (1st graph)
-Bar graph keeps track of the total amount of times a champion is used. We ordered the bars from least frequent to most frequent. For the champion in question, we see that Talon is only used 50 times throughout the 2022 season.
+The bar graph keeps track of the total amount of times a champion is used. We ordered the bars from least frequent to most frequent. For the champion in question, we see that Talon is only used 65 times throughout the 2022 season.
 
 <iframe src="assets/kills_histogram.html" width="100%" height="500px" frameBorder=0></iframe>
 
 (2nd graph)
-A density histogram of the frequency of kills a champion has overall in the data set. We included an overlayed density histogram for Talon specifically. Through the whole season, Talon mostly gets only 2-3 kills in a given match, which isn't too surprising as Talon usually takes the Jungle position.
+A density histogram of the frequency of kills a champion has overall in the data set. We included an overlaid density histogram for Talon specifically. Throughout the whole season, Talon mostly gets only 2-3 kills in a given match, which isn't too surprising as Talon usually takes the Jungle role (whose responsibility is gathering resources such as gold and experience for the team).
 
 ## Bivariate Analysis
 
 <iframe src="assets/wins_and_losses.html" width="100%" height="500px" frameBorder=0></iframe>
 
 (1st graph)
-Bar graph that keeps track of the wins and loses that each champion has, where blue depicts the wins and red the losses. Talon in particular has 28 wins and 22 losses.
+The bar graph keeps track of the wins and losses that each champion has, where blue depicts the wins and red the losses. Talon in particular has 36 wins and 29 losses.
 
 <iframe src="assets/kills_vs_deaths.html" width="100%" height="500px" frameBorder=0></iframe>
 
 (2nd graph)
-We wanted to explore the relationship between the number of kills and deaths in the data set. In the scatter plot above, we see that the more kills a player has, the less deaths they have, though this association is weak as the graph isn't quite linear.
+We wanted to explore the relationship between the number of kills and deaths in the data set. In the scatter plot above, we see that the more kills a player has, the fewer deaths they have, though this association is weak as the graph isn't strongly linear.
 
 ## Interesting Aggregates
 
@@ -127,7 +127,7 @@ We wanted to explore the relationship between the number of kills and deaths in 
 </div>
 
 (1st pivot)
-Pivot table that keeps track of the average earned gpm (gold per minute) each position has, depending on if they won a match or not. As expected, the highest avergage gpm is across all positions where a match was won. In relation to our question, Talon usually takes the Jungle position whose responsibility is gaining gold and experience for the team.
+Pivot table that keeps track of the average earned gpm (gold per minute) each position has, depending on if they won a match or not. As expected, the highest average gpm is across all positions where a match was won. In relation to our question, Talon usually takes the Jungle position whose responsibility is gaining gold and experience for the team.
 
 <div markdown="1" style="
     display: block; 
@@ -144,13 +144,13 @@ Pivot table that keeps track of the average earned gpm (gold per minute) each po
 </div>
 
 (2nd pivot)
-Pivot table of average kills per position depending on if they are on the Blue or Red side of a match. Trend observed is that the Blue side gets higher kills on average across all positions.
+Pivot table of average kills per position depending on if they are on the Blue or Red side of a match. The trend observed is that the Blue side gets higher kills on average across all positions.
 
 ## NMAR Analysis
 
 State whether you believe there is a column in your dataset that is NMAR. Explain your reasoning and any additional data you might want to obtain that could explain the missingness (thereby making it MAR). Make sure to explicitly use the term “NMAR.”
 
-We believe the 'url' column may be NMAR. There are urls that exist for every competitive match, which will documenent match information. However, after checking the unique domain names in the url column, it would appear that the only the 2 sites mentioned are: lpl.qq.com & matchhistory.na.leagueoflegends.com.
+We believe the 'url' column may be NMAR. There are urls that exist for every competitive match, which will document match information. However, after checking the unique domain names in the url column, it would appear that the only 2 sites mentioned are: lpl.qq.com & matchhistory.na.leagueoflegends.com.
 
 The missingness of the url value depends on whether there is a url for the match that is documented on one of these two sites. In other words, the missingness of the url depends on part of the url itself, i.e. the value of the url.
 
@@ -158,7 +158,7 @@ The missingness of the url value depends on whether there is a url for the match
 
 <iframe src="assets/ban2_by_missingness_of_ban1.html" width="100%" height="500px" frameBorder=0></iframe>
 
-Ban1 & Ban2 are both categorical variables that take on the value of the name of a champion. As a result, to determine if the value of ban2 is related to the missingness of ban1, we need to have a test statistic that tells us how different two categorical distributions are. The TVD is an appropiate choice to use here.
+Ban1 & Ban2 are both categorical variables that take on the value of the name of a champion. As a result, to determine if the value of ban2 is related to the missingness of ban1, we need to have a test statistic that tells us how different the two categorical distributions are. The TVD is an appropriate choice to use here.
 
 Our Hypotheses:
 Null hypothesis - The distributions of ban2 when ban1 is missing and ban2 when ban1 isn't missing are the same.
@@ -168,41 +168,41 @@ The observed test statistic (TVD) that we calculate ends up being ~0.3599. To ch
 
 In the end, our calculated p-value ends up being exactly 0. This means that none of our simulated test statistics were ever greater than or equal to our observed test statistic.
 
-We have sufficient evidence to reject the null hypothesis. This ultimately suggests that the categorical distribution of ban2 when ban1 is missing, is different from the categorical distribution of ban2 when ban1 isn't missing.
+We have sufficient evidence to reject the null hypothesis. This ultimately suggests that the categorical distribution of ban2 when ban1 is missing is different from the categorical distribution of ban2 when ban1 isn't missing.
 
 In other words, the missingness of ban1 is dependent on ban2. (MAR)
 
 <iframe src="assets/result_by_missingness_of_ban1.html" width="100%" height="500px" frameBorder=0></iframe>
 
-This time we're checking to see if the distributions of result (Boolean True/False), are different depending on if ban1 is missing or not. In this case, result is also a categorical variable, so the TVD would remain an appropiate statistic in this case as well.
+This time we're checking to see if the distributions of the result column (Boolean True/False), are different depending on if ban1 is missing or not. In this case, result is also a categorical variable, so the TVD would remain an appropriate statistic in this case as well.
 
 Our Hypotheses:
-Null hypothesis - This distributions of result when ban1 is missing and result when ban1 isn't missing are the same.
-Alternative hypothesis - This distributions of result when ban1 is missing and result when ban1 isn't missing are not the same.
+Null hypothesis - The distributions of result when ban1 is missing and result when ban1 isn't missing are the same.
+Alternative hypothesis - The distributions of result when ban1 is missing and result when ban1 isn't missing are not the same.
 
 Our observed test statistic is ~0.00139. Once again, to figure out how unusual this test statistic is (assuming the null), we run a permutation test and simulate test statistics under the null hypothesis 100 times.
 
 In the end, our calculated p-value is 0.9. This means that 90% of simulated test statistics ended up being greater than our observed test statistic. This means that our observed test statistic is not unusual under the null.
 
-With this in mind, we fail to reject the null hyothesis. While result could still be dependent on the missingness on ban1, we don't have enough evidence to think that could be the case.
+With this in mind, we fail to reject the null hypothesis. While the result column could still be dependent on the missingness on ban1, we don't have enough evidence to think that could be the case.
 
-Subsequently, the missingness of ban1 does not depend on result.
+Subsequently, the missingness of ban1 does not depend on the result column.
 
 ## Hypothesis Test
 
-Going back to our question, about whether Talon is more likely to win or lose any given match. We would essentially like to know if Talon's winrate is more than 50%.
+Going back to our question, about whether Talon is more likely to win or lose any given match. We would essentially like to know if Talon's win rate is more than 50%.
 
 Null Hypothesis: Talon's win rate is 50%
 Alternative Hypothesis: Talon's win rate is greater than 50%
 
 In this case, the test statistic
 
-Test Shatistic: Talon's proportion of matches won. This is an appropiate choice of test statistic, as larger values point towards the alternative hypothesis, and smaller values point towards the null hypothesis.
+Test Statistic: Talon's proportion of matches won. This is an appropriate choice of the test statistic, as larger values point towards the alternative hypothesis, and smaller values point towards the null hypothesis.
 
-Chosen Significance Level: 0.05. This means that we're willing to reject if at most 5% of our generated test statistics are more extreme than the observed test statistic. In other words, we'd be willing to accept a 5% chance of making a Type I error.
+Chosen Significance Level: 0.05. We’re willing to accept a 5% chance of making a Type I error.
 
 <iframe src="assets/talon_win_rate.html" width="100%" height="500px" frameBorder=0></iframe>
 
-P-Value: 0.2323
+P-Value: 0.2323 > 0.05
 
-We fail to reject the null hypothesis @ the 0.05 significance level. It should be noted that Talon's true winrate could very well be greater than 50%, and that we are making a Type II error. However, we lack sufficient evidence to definitively support this claim. To increase our power to detect an effect, we can consider increasing our sample size by including matches from other years. However, it should be noted that Talon as a hero has likely been changed (buffs/nerfs) numerous times, so we should take interpretations about how good Talon is currently, with a grain of salt. 
+We fail to reject the null hypothesis at the 0.05 significance level. It should be noted that Talon's true win rate could very well be greater than 50% (and that we are making a Type II error). However, we lack sufficient evidence to definitively support this claim. To increase our power to detect an effect, we can consider increasing our sample size by including matches from other years. However, it should be noted that Talon as a hero has likely been changed (buffs/nerfs) numerous times, so we should take interpretations about how good Talon is currently, with a grain of salt. 
